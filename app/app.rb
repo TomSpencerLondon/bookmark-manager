@@ -17,9 +17,14 @@ class Bookmark < Sinatra::Base
     erb(:links)
   end
 
+  get '/links/new' do
+    erb(:new_links)
+  end
+
   delete '/links/:id' do
     link = Link.get(id)
-    link.destroy 
+    link.destroy
+    redirect('/links')
   end
 
   run! if app_file == $0
