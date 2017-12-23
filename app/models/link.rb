@@ -13,5 +13,4 @@ class Link
     tag_arr.each{|tag| self.tags << Tag.first_or_create(name: tag)}
   end
 
-
 end

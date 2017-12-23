@@ -1,11 +1,3 @@
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 <center>
   <% if @user_name %>
@@ -17,7 +9,6 @@
   </form>
   <% end %>
   <%= flash[:message] %>
-  <h1>Bookmark</h1>
   <p>Choose a website you want to save</p>
   <div id='links'>
     <% @links.each do |link| %>
@@ -42,24 +33,3 @@
     </form>
   </div>
 </center>
-
-<style>
-  form{
-    padding-left: 25%;
-    padding-right: 25%;
-  }
-  h1{
-    font-size: 500%;
-  }
-  p{
-    font-size: 250%;
-  }
-  #links{
-    padding-left: 25%;
-    padding-right: 25%;
-  }
-  /*#single_link{
-    padding-left: 25%;
-    padding-right: 25%;
-  }*/
-</style>
