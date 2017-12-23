@@ -8,20 +8,26 @@
   <% end %>
   <%= flash[:message] %>
   <h1>Bookmark</h1>
-  <ul id='links'>
+  <div id='links'>
     <% @links.each do |link| %>
-      <li>
+      <div>
         Title: <%= link.title %>
         URL: <%= link.url %>
         Tag: <% link.tags.each do |tag| %>
           <%= tag.name %>;
               <% end %>
-      </li>
+      <!-- <form action="/links/<%= link.id %>" method="post">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" value="Delete">
+      </form> -->
+      </div>
     <% end %>
-  </ul>
-  <form action="/tag-filters" method="post">
-    Search by a tag:
-    <input type="text" name="tag"><br>
-    <input type="submit" value="Submit"><br>
-  </form>
+  </div>
+  <div id="tag-form">
+    <form action="/tag-filters" method="post">
+      Search by a tag:
+      <input type="text" name="tag">
+      <input type="submit" value="Submit"><br>
+    </form>
+  </div>
 </center>

@@ -17,5 +17,10 @@ class Bookmark < Sinatra::Base
     erb(:links)
   end
 
+  delete '/links/:id' do
+    link = Link.get(id)
+    link.destroy 
+  end
+
   run! if app_file == $0
 end
