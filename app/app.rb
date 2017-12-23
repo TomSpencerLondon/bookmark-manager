@@ -11,6 +11,12 @@ class Bookmark < Sinatra::Base
   enable :sessions
   set :session_secret, 'probably not really that secret'
 
+  get '/' do
+    @user_name = get_current_user.email if get_current_user
+    @links = Link.all
+    erb(:links)
+  end
+
   get '/links' do
     @user_name = get_current_user.email if get_current_user
     @links = Link.all
@@ -18,6 +24,10 @@ class Bookmark < Sinatra::Base
   end
 
   get '/links/new' do
+    erb(:new_links)
+  end
+
+  post '/links/new' do
     erb(:new_links)
   end
 
