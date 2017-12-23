@@ -1,0 +1,27 @@
+<center>
+
+  <% if @user_name %>
+  <p> Welcome <%= @user_name %>!</p>
+  <form action="/users/sign_out" method="post">
+    <input type="submit" value="sign out">
+  </form>
+  <% end %>
+  <%= flash[:message] %>
+  <h1>Bookmark</h1>
+  <ul id='links'>
+    <% @links.each do |link| %>
+      <li>
+        Title: <%= link.title %>
+        URL: <%= link.url %>
+        Tag: <% link.tags.each do |tag| %>
+          <%= tag.name %>;
+              <% end %>
+      </li>
+    <% end %>
+  </ul>
+  <form action="/tag-filters" method="post">
+    Search by a tag:
+    <input type="text" name="tag"><br>
+    <input type="submit" value="Submit"><br>
+  </form>
+</center>
